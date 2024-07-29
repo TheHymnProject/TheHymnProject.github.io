@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Sheet Music Previews</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+    </head>
+    
+    <body onload="sortList()">
+        <form class="w3-form" action="">
+            <p>I'm looking for...</p>
+            <input class="w3-check" type="checkbox" id="charts" name="resource" value="Charts">
+            <label for="charts">Charts</label>
+            <input class="w3-check" type="checkbox" id="recordings" name="resource" value="Recordings">
+            <label for="recordings">Recordings</label>
+            <input class="w3-check" type="checkbox" id="backings" name="resource" value="Backings">
+            <label for="backings">Backings</label>
+    
+            <p>Of...</p>
+            <input class="w3-check" type="checkbox" id="hymn" name="genre" value="Hymn">
+            <label for="hymn">Hymns</label>
+            <input class="w3-check" type="checkbox" id="mass" name="genre" value="Mass">
+            <label for="mass">Mass Settings</label><br>
+            <input class="w3-check" type="checkbox" id="plainchant" name="genre" value="Plainchant">
+            <label for="plainchant">Plainchant</label>
+            <input class="w3-check" type="checkbox" id="other" name="genre" value="Other">
+            <label for="other">Other Song</label>
+    
+            <p>For...</p>
+            <input class="w3-check" type="checkbox" id="piano" name="format" value="Piano">
+            <label for="piano">Piano</label>
+            <input class="w3-check" type="checkbox" id="leadsheet" name="format" value="Leadsheet">
+            <label for="leadsheet">Guitar/Band</label><br>
+            <input class="w3-check" type="checkbox" id="organ" name="format" value="Organ">
+            <label for="organ">Organ</label>
+            <input class="w3-check" type="checkbox" id="choir" name="forman" value="Choir">
+            <label for="choir">Choir</label>
+        </form>
+    
+        <ul id="ChartList" class="w3-ul">
+            <li class="res-chart for-piano gen-other">
+                <a href="./Scores/Misc/No_Fear_In_Love.pdf">No Fear In Love - E</a>
+            </li>
+            <li class="res-chart for-leadsheet gen-other">
+                <a href="./Scores/Misc/NoFearInLoveLeadsheet.pdf">No Fear In Love (Leadsheet) - G</a>
+            </li>
+            <li class="res-chart for-piano gen-other">
+                <a href="./Scores/Misc/Christ Our King Village Lights.pdf">Christ Our King (Piano) - G</a>
+            </li>
+            <li class="res-chart for-leadsheet gen-other">
+                <a href="./Charts/NoFearInLoveLeadsheet_E_.pdf">No Fear In Love (Leadsheet) - E</a>
+            </li>
+            <li class="res-chart for-piano gen-other">
+                <a href="./Charts/AsTheDeerLongsDominicMacAller(Piano)-Dm.pdf">As The Deer Longs (Piano) - Dm (Dominic MacAller arrangment)</a>
+            </li>
+            <li class="res-chart for-leadsheet gen-other">
+                <a href="./Charts/GreatAreYouLord(Leadsheet)-G.pdf">Great Are You Lord (Leadsheet) - G</a>
+            </li>
+            <li class="res-chart for-leadsheet gen-other">
+                <a href="./Charts/InChristAlone(Leadsheet)-D.pdf">In Christ Alone (Leadsheet) - D</a>
+            </li>
+            <li class="res-chart for-piano gen-other">
+                <a href="./Charts/InChristAlone(Piano)-D.pdf">In Christ Alone (Piano) - D</a>
+            </li>
+            <li class="res-chart for-organ gen-mass">
+                <a href="./Charts/CelticPentecostSequencePreview(Piano)-G.pdf">Celtic Pentecost Sequence (Organ) - G</a>
+            </li>
+            <li class="res-chart for-leadsheet gen-other">
+                <a href="./Charts/JesusAtTheCentre(Leadsheet)-G.pdf">Jesus At The Centre (Leadsheet) - G</a>
+            </li>
+            <li class="res-chart for-piano gen-other">
+                <a href="./Charts/KingOfKings(PianoOnly)-D.pdf">King of Kings (Piano Only) - D</a>
+            </li>
+            <li class="res-chart for-leadsheet gen-mass">
+                <a href="./Charts/Mass_of_St_Francis_Simplified-Separated.pdf">Mass of St Francis Simplified Harmony (Leadsheet)</a>
+            </li>
+            <li class="res-chart for-piano gen-other">
+                <a href="./Charts/OpenTheEyesOfMyHeart(Piano)-E.pdff">Open The Eyes of My Heart (Piano) - E</a>
+            </li>
+            <li class="res-chart for-choir gen-other">
+                <a href="./Charts/StayWithMeVerses.pdf">Stay With Me verses (Vocal)</a>
+            </li>
+            <li class="res-chart for-piano gen-other">
+                <a href="./Charts/TakeUpOurCrossHart(Piano)-A.pdf">Take Up Our Cross (Piano) - A</a>
+            </li>
+            <li class="res-chart for-leadsheet gen-hymn">
+                <a href="./Charts/FilledWithTheSpiritsPower(Leadsheet)-D.pdf">Filled With The Spirit's Power (Leadsheet) - D</a>
+            </li>
+        </ul>
+        <!-- Load external JavaScript -->
+        <script src="scripts.js"></script>
+    </body>
+</html>

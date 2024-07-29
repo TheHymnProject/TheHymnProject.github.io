@@ -1,0 +1,17 @@
+name: Sing My Tongue The Saviour's Glory;
+mode: 3;
+annotation: Mode;
+annotation: III;
+%drop-cap-font-family: Times New Roman;
+initial-style: 1;
+centering-scheme: english;
+%width: 7.5;
+%name: Sing My Tongue;
+%%
+(c4)Sing |2. Of |3. On |4. Word |5. Down |6. To (e') my |a |the |made |in |the (e) tongue, |pure |night |flesh, |a- |e- (f) the |and |of |the |do- |ver- (ed) Sav|spot|that |bread |ra- |last- (g')ior’s |less |last |of |tion |ing (g) glo|vir|sup|na|fal- |Fa(hj)ry, |gin |per, |ture |ling, |ther, (j.) (,)
+of |born |seat|by |this |and (jk) his |for |ed |his |great |the (j) flesh |us |with |word |sa- |Son (j') the |on |his |to |cra- |who (i) mys|earth |cho|flesh |ment |made (h')t'ry |be|sen |he |we |us (j) sing; |low, |band, |turns; |hail; |free, (ivHG.) (:) | | | | | (z)
+Of |He, |He, |Wine |O- |And (g) the |as |the |in|ver |the (h) Blood, |man, |Pas- |to |an|Spir(j) all |with |chal |his |cient |it, (i') price |us |vic|blood |forms |God (h) ex|con|tim |he |of |pro(g')ceed|vers|eat|chan- |wor|ceed(h)ing, |ing, |ing, |ges, |ship |ing (g.) (,)
+shed |stayed, |first |what |new|from (h') by |the |ful|though |er |them (i) our |seeds |fills |sense |rites |Each (g') im|of |the |no |of |e- (g)mor|truth |Law’s |change |grace |ter- (e')tal |to |com-|dis|pre|nal- (h) King, |sow; |mand; |cerns? |vail; |ly, (hd..) (:) | | | | | (z)
+Des-|Then |Then |On|Faith |Be (e)tined, |he |as |ly |tells |sal(g') for |closed |food, |be |us |va(g) the |in |to |the |that |tion, (e') world’s |sol-|the |heart |Christ |hon(g) re|emn |dis|in |is |or, (h')demp|or|ci|ear- |pre- |bess(h)tion, |der |ples |nest, |sent, |ing, (g.) (,)
+from |won|gives |faith |when |might (h) a |drous-|him|its |our |and (i') no|ly |self |les|hu|end(g)ble |his |with |son |man |less (hg) womb |life |his |quick|sens|ma- (fe) to |of |own |ly |es |je- (d) spring. |woe. |hand. |learns. |fail. |sty. (e.) (::) | | | | | (z)
+A(efe)men.(de) (::)
