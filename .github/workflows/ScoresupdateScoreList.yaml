@@ -1,4 +1,4 @@
-name: Ensure PDF List Exists in Index
+name: Update PDF Links in Index
 
 on:
   push:
@@ -13,41 +13,47 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Ensure chartsList exists & update it
+    - name: Update PDF list in index.html safely
       run: |
         FILE="index.html"
         TMP_FILE="index.tmp.html"
+        NEW_LIST_FILE="new_list.html"
         LIST_CONTENT="<ul id=\"chartsList\">"
 
-        # Start new list
-        echo "$LIST_CONTENT" > "$TMP_FILE"
+        # Start new list and store in a separate file
+        echo "$LIST_CONTENT" > "$NEW_LIST_FILE"
 
-        # Generate links for all PDF files found in Scores/
+        # Process PDFs line-by-line instead of a single large argument
         find Scores -type f -name "*.pdf" | while read filepath; do
           filename=$(basename "$filepath")
-          echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$TMP_FILE"
+          echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$NEW_LIST_FILE"
         done
 
-        echo "</ul>" >> "$TMP_FILE"
+        echo "</ul>" >> "$NEW_LIST_FILE"
 
-        # Check if chartsList already exists
+        # Check if <ul id="chartsList"> exists
         if grep -q '<ul id="chartsList">' "$FILE"; then
-          # Replace existing chartsList
-          sed -i "/<ul id=\"chartsList\">/,/<\/ul>/c\\$(cat $TMP_FILE)" "$FILE"
+          # Use awk instead of sed to safely replace without argument size limits
+          awk '
+            BEGIN { in_list = 0 }
+            /<ul id="chartsList">/ { in_list = 1; while (getline line < "'"$NEW_LIST_FILE"'") print line }
+            /<\/ul>/ { in_list = 0; print }
+            !in_list { print }
+          ' "$FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$FILE"
         else
-          # Add new chartsList before </body> or at the end of the file
-          sed -i "/<\/body>/i\\$(cat $TMP_FILE)" "$FILE"
+          # Append list before </body>
+          sed -i "/<\/body>/i\\$(cat $NEW_LIST_FILE)" "$FILE"
         fi
 
-        # Clean up temporary file
-        rm "$TMP_FILE"
+        # Clean up
+        rm "$NEW_LIST_FILE"
 
     - name: Commit and push changes
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add index.html
-        git commit -m "Ensure chartsList exists and update PDF links"
+        git commit -m "Fix: Safely update PDF list in index.html"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
