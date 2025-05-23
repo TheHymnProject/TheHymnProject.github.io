@@ -13,39 +13,48 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Update PDF list in index.html safely
+    - name: Safely update PDF list in index.html
       run: |
         FILE="index.html"
         TMP_FILE="index.tmp.html"
         NEW_LIST_FILE="new_list.html"
-        LIST_CONTENT="<ul id=\"chartsList\">"
+        LIST_START="<ul id=\"chartsList\">"
+        LIST_END="</ul>"
 
-        # Start new list and store in a separate file
-        echo "$LIST_CONTENT" > "$NEW_LIST_FILE"
+        # Start new list in separate file
+        echo "$LIST_START" > "$NEW_LIST_FILE"
 
-        # Process PDFs line-by-line instead of a single large argument
+        # Process PDFs one by one, avoiding long argument issues
         find Scores -type f -name "*.pdf" | while read filepath; do
           filename=$(basename "$filepath")
           echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$NEW_LIST_FILE"
         done
 
-        echo "</ul>" >> "$NEW_LIST_FILE"
+        echo "$LIST_END" >> "$NEW_LIST_FILE"
 
-        # Check if <ul id="chartsList"> exists
-        if grep -q '<ul id="chartsList">' "$FILE"; then
-          # Use awk instead of sed to safely replace without argument size limits
-          awk '
-            BEGIN { in_list = 0 }
-            /<ul id="chartsList">/ { in_list = 1; while (getline line < "'"$NEW_LIST_FILE"'") print line }
-            /<\/ul>/ { in_list = 0; print }
-            !in_list { print }
-          ' "$FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$FILE"
-        else
-          # Append list before </body>
-          sed -i "/<\/body>/i\\$(cat $NEW_LIST_FILE)" "$FILE"
+        # Stream the index.html file safely while replacing the list
+        awk '
+          BEGIN { inside_list = 0 }
+          {
+            if ($0 ~ /<ul id="chartsList">/) { 
+              inside_list = 1
+              while (getline line < "'"$NEW_LIST_FILE"'") print line 
+            }
+            if (inside_list && $0 ~ /<\/ul>/) { 
+              inside_list = 0
+              next
+            }
+            if (!inside_list) print
+          }
+        ' "$FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$FILE"
+
+        # If no chartsList found, append before </body>
+        if ! grep -q '<ul id="chartsList">' "$FILE"; then
+          echo "" >> "$FILE"
+          cat "$NEW_LIST_FILE" >> "$FILE"
         fi
 
-        # Clean up
+        # Clean up temporary file
         rm "$NEW_LIST_FILE"
 
     - name: Commit and push changes
@@ -53,7 +62,7 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add index.html
-        git commit -m "Fix: Safely update PDF list in index.html"
+        git commit -m "Fix: Stream-based update to avoid large arguments"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
