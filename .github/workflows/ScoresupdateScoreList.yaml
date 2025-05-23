@@ -8,6 +8,9 @@ on:
 jobs:
   update-index:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Explicitly grants write access for this workflow
 
     steps:
     - name: Checkout repository
