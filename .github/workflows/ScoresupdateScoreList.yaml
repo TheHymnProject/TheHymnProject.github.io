@@ -28,7 +28,7 @@ jobs:
         echo "$LIST_START" > "$NEW_LIST_FILE"
 
         # Process PDFs one by one, avoiding long argument issues
-        find Scores -type f -name "*.pdf" | while read filepath; do
+        find Scores -type f -name "*.pdf" | sort | while read filepath; do
           filename=$(basename "$filepath")
           echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$NEW_LIST_FILE"
         done
