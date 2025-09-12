@@ -1,0 +1,71 @@
+name: Update PDF Links in Index
+
+on:
+  push:
+    paths:
+      - "Scores/**/*.pdf"
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Explicitly grants write access for this workflow
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Safely update PDF list in index.html
+      run: |
+        FILE="index.html"
+        TMP_FILE="index.tmp.html"
+        NEW_LIST_FILE="new_list.html"
+        LIST_START="<ul id=\"chartsList\">"
+        LIST_END="</ul>"
+
+        # Start new list in separate file
+        echo "$LIST_START" > "$NEW_LIST_FILE"
+
+        # Process PDFs one by one, avoiding long argument issues
+        find Scores -type f -name "*.pdf" | sort | while read filepath; do
+          filename=$(basename "$filepath")
+          echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$NEW_LIST_FILE"
+        done
+
+        echo "$LIST_END" >> "$NEW_LIST_FILE"
+
+        # Stream the index.html file safely while replacing the list
+        awk '
+          BEGIN { inside_list = 0 }
+          {
+            if ($0 ~ /<ul id="chartsList">/) { 
+              inside_list = 1
+              while (getline line < "'"$NEW_LIST_FILE"'") print line 
+            }
+            if (inside_list && $0 ~ /<\/ul>/) { 
+              inside_list = 0
+              next
+            }
+            if (!inside_list) print
+          }
+        ' "$FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$FILE"
+
+        # If no chartsList found, append before </body>
+        if ! grep -q '<ul id="chartsList">' "$FILE"; then
+          echo "" >> "$FILE"
+          cat "$NEW_LIST_FILE" >> "$FILE"
+        fi
+
+        # Clean up temporary file
+        rm "$NEW_LIST_FILE"
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add index.html
+        git commit -m "Fix: Stream-based update to avoid large arguments"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

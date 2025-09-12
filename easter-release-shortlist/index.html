@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Easter Hymn Shortlist</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+    th:hover {
+      background-color: #e2e2e2;
+    }
+    .icon-link {
+      margin-right: 8px;
+      font-size: 1.2em;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .audio-container {
+      margin-top: 4px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      width: 80%; height: 80%;
+      background: #fff;
+      padding: 10px;
+    }
+    .modal-content iframe {
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .close-btn {
+      position: absolute;
+      top: 5px; right: 10px;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<table id="hymnTable">
+  <thead>
+    <tr>
+      <th onclick="sortTable(0)">Text</th>
+      <th onclick="sortTable(1)">Tune</th>
+      <th onclick="sortTable(2)">Vibe</th>
+      <th onclick="sortTable(3)">Relevance</th>
+      <th>Resources</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Now the Green Blade Rises</td>
+      <td>Noël Nouvelet</td>
+      <td>Mixed</td>
+      <td>Easter</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Now the Green Blade Rises.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/NowTheGreenBladeRises-NoelNouvelet-Piano.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Forty Days and Forty Nights</td>
+      <td>Heinlein</td>
+      <td>Chill</td>
+      <td>Lent</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Forty days and forty nights.mp3"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/FortyDaysAndFortyNightsPianoDm.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>O Breathe on Me, O Breath of God</td>
+      <td>St Columba</td>
+      <td>Chill</td>
+      <td>Pentecost, Lent, General</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/O-breathe-on-me-o-breath-of-god.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/OBreatheOnMeOBreathOfGod-StColumba/OBreatheOnMeOBreathOfGod-StColumba-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Be Thou My Vision</td>
+      <td>Slane</td>
+      <td>Energetic</td>
+      <td>Lent, General</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Be Thou My Vision.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/BeThouMyVision-Slane-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Firmly I Believe and Truly</td>
+      <td>Drakes Broughton</td>
+      <td>Chill</td>
+      <td>Trinity, General</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Firmly I Believe and Truly.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/FirmlyIBelieveAndTruly-DrakesBroughton-Piano.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>I Heard the Voice of Jesus</td>
+      <td>Kingsfold</td>
+      <td>Chill</td>
+      <td>Lent, General</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/I-heard-the-voice-of-Jesus.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/IHeardTheVoiceOfJesus-Kingsfold/IHeardTheVoiceOfJesus-Kingsfold-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Hail Redeemer</td>
+      <td>Rex</td>
+      <td>Energetic</td>
+      <td>Easter, Palm Sunday, Christ the King, Shepherd Sunday, General</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Hail-redeemer.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/Hail Redeemer-Rex-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Sing With All the Saints in Glory</td>
+      <td>Hymn to Joy</td>
+      <td>Energetic</td>
+      <td>Easter, Ascension</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Sing With All the Sons of Glory (E).m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/SingWithAllTheSaintsinGlory-HymnToJoy-Leadsheet-E.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Let All Mortal Flesh</td>
+      <td>Picardy</td>
+      <td>Mixed</td>
+      <td>Easter, Christmas, Eucharist, General</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Let-all-mortal-flesh.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/LetAllMortalFlesh-Picardy/LetAllMortalFlesh-Picardy-Octavo.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Alleluia Sing to Jesus</td>
+      <td>Hyfrydol</td>
+      <td>Energetic</td>
+      <td>Easter, Christ the King, Palm Sunday, General</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Hallelujah! Sing to Jesus.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/HallelujahSingToJesus-Hyfrydol/HallelujahSingToJesus-Piano-E.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>Bring All Ye Dear Bought Nations</td>
+      <td>Lasst uns erfreuen</td>
+      <td>Energetic</td>
+      <td>Easter</td>
+      <td>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="../Recordings/Hymns/Demos/HymnTunes/Bring All Ye Dear Bought Nations.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           '../Scores/Hymns/HymnProjectArrangements/BringAllYeDearBoughtNations-LasstUnsErfreuen/BringAllYeDearBought-LasstUnsErfreuen-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="pdfModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <iframe id="pdfFrame" src=""></iframe>
+  </div>
+</div>
+
+<script>
+  function sortTable(colIndex) {
+    var table = document.getElementById("hymnTable"),
+        switching = true,
+        dir = "asc",
+        switchcount = 0;
+    while (switching) {
+      switching = false;
+      var rows = table.rows;
+      for (var i = 1; i < rows.length - 1; i++) {
+        var x = rows[i].getElementsByTagName("TD")[colIndex].innerText.toLowerCase();
+        var y = rows[i + 1].getElementsByTagName("TD")[colIndex].innerText.toLowerCase();
+        var shouldSwitch = (dir === "asc" && x > y) || (dir === "desc" && x < y);
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount++;
+          break;
+        }
+      }
+      if (!switchcount && dir === "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+
+  function toggleAudio(el) {
+    var container = el.parentElement.querySelector('.audio-container');
+    if (container.style.display === 'none') {
+      container.innerHTML = '<audio controls src="' + el.dataset.audio + '"></audio>';
+      container.style.display = 'block';
+    } else {
+      container.innerHTML = '';
+      container.style.display = 'none';
+    }
+  }
+
+  function openModal(pdfUrl) {
+    document.getElementById('pdfFrame').src = pdfUrl;
+    document.getElementById('pdfModal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfFrame').src = '';
+  }
+</script>
+
+</body>
+</html>
