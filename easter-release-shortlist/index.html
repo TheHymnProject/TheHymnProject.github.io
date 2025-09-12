@@ -14,16 +14,45 @@
       text-align: left;
     }
     th {
-      background: #f2f2f2;
+      background-color: #f2f2f2;
       cursor: pointer;
     }
     th:hover {
-      background: #e2e2e2;
+      background-color: #e2e2e2;
     }
     .icon-link {
       margin-right: 8px;
-      text-decoration: none;
       font-size: 1.2em;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .audio-container {
+      margin-top: 4px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      width: 80%; height: 80%;
+      background: #fff;
+      padding: 10px;
+    }
+    .modal-content iframe {
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .close-btn {
+      position: absolute;
+      top: 5px; right: 10px;
+      font-size: 1.5em;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -46,8 +75,13 @@
       <td>Mixed</td>
       <td></td>
       <td>
-        <a class="icon-link" href="Recordings/Hymns/Demos/HymnTunes/Now the Green Blade Rises.m4a" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/now-the-green-blade-rises.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Now-the-Green-Blade-Rises.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/NowTheGreenBladeRises-NoelNouvelet/NowTheGreenBladeRises-NoelNouvelet-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -56,8 +90,13 @@
       <td>Chill</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/forty-days-and-forty-nights.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/forty-days-and-forty-nights.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Forty-days-and-Forty-nights.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/FortyDaysAndFortyNights-Heinlein/FortyDaysAndFortyNights-Heinlein-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -66,8 +105,13 @@
       <td>Chill</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/o-breathe-on-me-o-breath-of-god.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/o-breathe-on-me-o-breath-of-god.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/O-breathe-on-me-o-breath-of-god.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/OBreatheOnMeOBreathOfGod-StColumba/OBreatheOnMeOBreathOfGod-StColumba-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -76,8 +120,13 @@
       <td>Chill</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/be-thou-my-vision.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/be-thou-my-vision.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Be-thou-my-vision.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/BeThouMyVision-Slane/BeThouMyVision-Slane-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -86,8 +135,13 @@
       <td>Chill</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/firmly-i-believe-and-truly.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/firmly-i-believe-and-truly.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Firmly-i-believe-and-truly.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/FirmlyIBelieveAndTruly-DrakesBroughton/FirmlyIBelieveAndTruly-DrakesBroughton-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -96,8 +150,13 @@
       <td>Chill</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/i-heard-the-voice-of-jesus.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/i-heard-the-voice-of-jesus.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/I-heard-the-voice-of-Jesus.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/IHeardTheVoiceOfJesus-Kingsfold/IHeardTheVoiceOfJesus-Kingsfold-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -106,8 +165,13 @@
       <td>Energetic</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/hail-redeemer.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/hail-redeemer.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Hail-redeemer.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/HailRedeemer-Rex/HailRedeemer-Rex-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -116,8 +180,13 @@
       <td>Energetic</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/sing-with-all-the-saints-in-glory.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/sing-with-all-the-saints-in-glory.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Sing-with-all-the-saints-in-glory.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/SingWithAllTheSaintsInGlory-HymnToJoy/SingWithAllTheSaintsInGlory-HymnToJoy-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -126,8 +195,13 @@
       <td>Mixed</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/let-all-mortal-flesh.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/let-all-mortal-flesh.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Let-all-mortal-flesh.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/LetAllMortalFlesh-Picardy/LetAllMortalFlesh-Picardy-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -136,8 +210,13 @@
       <td>Energetic</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/alleluia-sing-to-jesus.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/alleluia-sing-to-jesus.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Alleluia-sing-to-jesus.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/AlleluiaSingToJesus-Hyfrydol/AlleluiaSingToJesus-Hyfrydol-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
     <tr>
@@ -146,38 +225,71 @@
       <td>Energetic</td>
       <td></td>
       <td>
-        <a class="icon-link" href="audio/bring-all-ye-dear-bought-nations.mp3" title="Play recording">▶</a>
-        <a class="icon-link" href="pdf/bring-all-ye-dear-bought-nations.pdf" title="Open PDF">📄</a>
+        <a class="icon-link" onclick="toggleAudio(this)"
+           data-audio="./Recordings/Hymns/Demos/HymnTunes/Bring-all-ye-dear-bought-nations.m4a"
+           title="Play recording">▶</a>
+        <a class="icon-link" onclick="openModal(
+           './Scores/HymnProjectArrangements/BringAllYeDearBoughtNations-LasstUnsErfreuen/BringAllYeDearBoughtNations-LasstUnsErfreuen-Leadsheet.pdf')"
+           title="Open PDF">📄</a>
+        <div class="audio-container" style="display:none;"></div>
       </td>
     </tr>
   </tbody>
 </table>
 
+<div id="pdfModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <iframe id="pdfFrame" src=""></iframe>
+  </div>
+</div>
+
 <script>
-  function sortTable(n) {
-    const table = document.getElementById("hymnTable");
-    let switching = true, dir = "asc", switchcount = 0;
+  function sortTable(colIndex) {
+    var table = document.getElementById("hymnTable"),
+        switching = true,
+        dir = "asc",
+        switchcount = 0;
     while (switching) {
       switching = false;
-      const rows = table.rows;
-      for (let i = 1; i < rows.length - 1; i++) {
-        let shouldSwitch = false;
-        const x = rows[i].getElementsByTagName("TD")[n].innerText.toLowerCase();
-        const y = rows[i + 1].getElementsByTagName("TD")[n].innerText.toLowerCase();
-        if ((dir === "asc" && x > y) || (dir === "desc" && x < y)) {
-          shouldSwitch = true;
+      var rows = table.rows;
+      for (var i = 1; i < rows.length - 1; i++) {
+        var x = rows[i].getElementsByTagName("TD")[colIndex].innerText.toLowerCase();
+        var y = rows[i + 1].getElementsByTagName("TD")[colIndex].innerText.toLowerCase();
+        var shouldSwitch = (dir === "asc" && x > y) || (dir === "desc" && x < y);
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount++;
           break;
         }
       }
-      if (shouldSwitch) {
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-        switchcount++;
-      } else if (switchcount === 0 && dir === "asc") {
+      if (!switchcount && dir === "asc") {
         dir = "desc";
         switching = true;
       }
     }
+  }
+
+  function toggleAudio(el) {
+    var container = el.parentElement.querySelector('.audio-container');
+    if (container.style.display === 'none') {
+      container.innerHTML = '<audio controls src="' + el.dataset.audio + '"></audio>';
+      container.style.display = 'block';
+    } else {
+      container.innerHTML = '';
+      container.style.display = 'none';
+    }
+  }
+
+  function openModal(pdfUrl) {
+    document.getElementById('pdfFrame').src = pdfUrl;
+    document.getElementById('pdfModal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfFrame').src = '';
   }
 </script>
 
