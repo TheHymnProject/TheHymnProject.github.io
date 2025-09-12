@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Easter Hymn Shortlist</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f2f2f2;
+      cursor: pointer;
+    }
+    th:hover {
+      background: #e2e2e2;
+    }
+    .icon-link {
+      margin-right: 8px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+<table id="hymnTable">
+  <thead>
+    <tr>
+      <th onclick="sortTable(0)">Text</th>
+      <th onclick="sortTable(1)">Tune</th>
+      <th onclick="sortTable(2)">Vibe</th>
+      <th onclick="sortTable(3)">Relevance</th>
+      <th>Resources</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Now the Green Blade Rises</td>
+      <td>Noël Nouvelet</td>
+      <td>Mixed</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/now-the-green-blade-rises.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/now-the-green-blade-rises.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Forty Days and Forty Nights</td>
+      <td>Heinlein</td>
+      <td>Chill</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/forty-days-and-forty-nights.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/forty-days-and-forty-nights.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>O Breathe on Me, O Breath of God</td>
+      <td>St Columba</td>
+      <td>Chill</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/o-breathe-on-me-o-breath-of-god.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/o-breathe-on-me-o-breath-of-god.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Be Thou My Vision</td>
+      <td>Slane</td>
+      <td>Chill</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/be-thou-my-vision.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/be-thou-my-vision.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Firmly I Believe and Truly</td>
+      <td>Drakes Broughton</td>
+      <td>Chill</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/firmly-i-believe-and-truly.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/firmly-i-believe-and-truly.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>I Heard the Voice of Jesus</td>
+      <td>Kingsfold</td>
+      <td>Chill</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/i-heard-the-voice-of-jesus.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/i-heard-the-voice-of-jesus.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Hail Redeemer</td>
+      <td>Rex</td>
+      <td>Energetic</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/hail-redeemer.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/hail-redeemer.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Sing With All the Saints in Glory</td>
+      <td>Hymn to Joy</td>
+      <td>Energetic</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/sing-with-all-the-saints-in-glory.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/sing-with-all-the-saints-in-glory.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Let All Mortal Flesh</td>
+      <td>Picardy</td>
+      <td>Mixed</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/let-all-mortal-flesh.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/let-all-mortal-flesh.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Alleluia Sing to Jesus</td>
+      <td>Hyfrydol</td>
+      <td>Energetic</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/alleluia-sing-to-jesus.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/alleluia-sing-to-jesus.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Bring All Ye Dear Bought Nations</td>
+      <td>Lasst uns erfreuen</td>
+      <td>Energetic</td>
+      <td></td>
+      <td>
+        <a class="icon-link" href="audio/bring-all-ye-dear-bought-nations.mp3" title="Play recording">▶</a>
+        <a class="icon-link" href="pdf/bring-all-ye-dear-bought-nations.pdf" title="Open PDF">📄</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  function sortTable(n) {
+    const table = document.getElementById("hymnTable");
+    let switching = true, dir = "asc", switchcount = 0;
+    while (switching) {
+      switching = false;
+      const rows = table.rows;
+      for (let i = 1; i < rows.length - 1; i++) {
+        let shouldSwitch = false;
+        const x = rows[i].getElementsByTagName("TD")[n].innerText.toLowerCase();
+        const y = rows[i + 1].getElementsByTagName("TD")[n].innerText.toLowerCase();
+        if ((dir === "asc" && x > y) || (dir === "desc" && x < y)) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        switchcount++;
+      } else if (switchcount === 0 && dir === "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
