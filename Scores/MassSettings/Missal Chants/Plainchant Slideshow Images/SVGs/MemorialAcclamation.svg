@@ -1,41 +1,202 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720">
- <g fill="#fff" font-family="Arial" font-size="53.3" font-weight="bold">
-  <path d="M1237 146l-7.95-7.94v-13.2l5.68 5.68v-25.9h2.27zm-19.5 251v128h20.2V397zm2.27 2.27h15.7v123h-15.7zM692 386h2.27v25.7H692zm-550 46l2.72-1.82v60.2H142zm698-317h2.27v76.7H840z"/>
-  <use xlink:href="#B"/>
-  <use xlink:href="#B" x="-533" y="-41"/>
-  <use xlink:href="#B" x="-417" y="-389"/>
-  <path d="M989 518c-5.14 0-8.02-.151-8.63-.454-1.06-.151-1.59-1.13-1.59-2.95v-14.1c0-1.51.53-2.35 1.59-2.5h12.7c1.66 0 2.88-.832 3.63-2.5v-23.6c1.21 1.06 1.97 2.42 2.27 4.09v38.6c0 1.82-.378 2.88-1.14 3.18-.605.151-3.56.227-8.85.227zM144.3 190c-5.14 0-8.02-.151-8.63-.454-1.06-.151-1.59-1.14-1.59-2.95v-14.1c0-1.51.53-2.35 1.59-2.5h12.7c1.66 0 2.88-.832 3.63-2.5v-23.6c1.21 1.21 1.97-20.6 2.27-19.1v61.7c0 1.82-.378 2.87-1.13 3.18-.605.151-3.56.227-8.85.227z"/>
-  <use xlink:href="#C"/>
-  <use xlink:href="#C" x="-114" y="-42"/>
-  <use xlink:href="#C" x="-177" y="-63"/>
-  <use xlink:href="#C" x="-313" y="-22"/>
-  <use xlink:href="#C" x="-421" y="-63"/>
-  <use xlink:href="#C" x="-532" y="-42"/>
-  <use xlink:href="#C" x="-625" y="-63"/>
-  <use xlink:href="#C" x="-697" y="-63"/>
-  <use xlink:href="#C" x="-760" y="-84"/>
-  <use xlink:href="#C" x="-906" y="-63"/>
-  <use xlink:href="#C" x="-992" y="-84"/>
-  <use xlink:href="#C" x="-1013" y="-105"/>
-  <use xlink:href="#C" x="-92" y="-370"/>
-  <use xlink:href="#C" x="-169" y="-349"/>
-  <use xlink:href="#C" x="-267" y="-370"/>
-  <use xlink:href="#C" x="-416" y="-370"/>
-  <use xlink:href="#C" x="-505" y="-370"/>
-  <use xlink:href="#C" x="-615" y="-349"/>
-  <use xlink:href="#C" x="-717" y="-307"/>
-  <use xlink:href="#C" x="-796" y="-349"/>
-  <use xlink:href="#C" x="-914" y="-370"/>
-  <use xlink:href="#C" x="-1021" y="-412"/>
-  <use xlink:href="#D"/>
-  <use xlink:href="#D" y="-307"/>
-  <path d="M42.7 523h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-181h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7z"/>
-  <text x="77.137794" y="618.90167">Cross and Resurrection you have set us free.</text>
-  <text x="97.137764" y="312.90216">Save us, saviour of the world, for by your</text>
- </g>
- <defs>
-  <path id="B" d="M1186 548c-1.21 0-2.12-.303-2.72-.908-.303-.454-.53-1.21-.681-2.27 0-.908.227-1.59.681-2.04.908-.908 1.82-1.36 2.72-1.36 1.36 0 2.27.454 2.72 1.36.454.454.681 1.14.681 2.04 0 .605-.227 1.36-.681 2.27-.605.605-1.44.908-2.5.908z"/>
-  <path id="C" d="M1155 537c1.21-2.72 4.62-4.09 10.2-4.09 5.45 0 8.78 1.36 9.99 4.09v20.2c-.454 0-1.59-.454-3.4-1.36-1.82-.757-4.01-1.14-6.58-1.14-2.72 0-4.99.378-6.81 1.14-1.82.908-2.95 1.36-3.4 1.36z"/>
-  <path id="D" d="M54.7 441c.454 1.82 1.51 3.56 3.18 5.22 1.66 1.51 3.4 2.27 5.22 2.27 2.87 0 5.9-1.21 9.08-3.63v20.4c-2.12 1.82-4.46 2.72-7.04 2.72a8.57 8.57 0 0 1-2.72-.454c-6.2-2.12-9.31-5.52-9.31-10.2v-35.2c.151-1.66.53-3.1 1.13-4.31 1.36-3.18 4.09-5.22 8.17-6.13a8.57 8.57 0 0 1 2.72-.454c2.72 0 4.84.908 6.36 2.72v19.7c-2.72-1.97-5.52-2.95-8.4-2.95-1.97 0-3.93.832-5.9 2.5-1.82 1.66-2.65 3.48-2.5 5.45z"/>
- </defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1280"
+   height="720"
+   version="1.1"
+   id="svg28"
+   sodipodi:docname="MemorialAcclamation.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview28"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.0736111"
+     inkscape:cx="638.96507"
+     inkscape:cy="358.13713"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g28" />
+  <g
+     fill="#fff"
+     font-family="Arial"
+     font-size="53.3"
+     font-weight="bold"
+     id="g28">
+    <path
+       d="M1237 146l-7.95-7.94v-13.2l5.68 5.68v-25.9h2.27zm-19.5 251v128h20.2V397zm2.27 2.27h15.7v123h-15.7zM692 386h2.27v25.7H692zm-550 46l2.72-1.82v60.2H142zm698-317h2.27v76.7H840z"
+       id="path1" />
+    <use
+       xlink:href="#B"
+       id="use1" />
+    <use
+       xlink:href="#B"
+       x="-533"
+       y="-41"
+       id="use2" />
+    <use
+       xlink:href="#B"
+       x="-417"
+       y="-389"
+       id="use3" />
+    <path
+       d="m 989,518 c -5.14,0 -8.02,-0.151 -8.63,-0.454 -1.06,-0.151 -1.59,-1.13 -1.59,-2.95 v -14.1 c 0,-1.51 0.53,-2.35 1.59,-2.5 h 12.7 c 1.66,0 2.88,-0.832 3.63,-2.5 v -23.6 c 1.21,1.06 1.97,2.42 2.27,4.09 v 38.6 c 0,1.82 -0.378,2.88 -1.14,3.18 -0.605,0.151 -3.56,0.227 -8.85,0.227 z M 144.3,190 c -5.14,0 -8.02,-0.151 -8.63,-0.454 -1.06,-0.151 -1.59,-1.14 -1.59,-2.95 v -14.1 c 0,-1.51 0.53,-2.35 1.59,-2.5 h 12.7 c 1.66,0 2.88,-0.832 3.63,-2.5 v -23.6 c 1.21,1.21 1.97,-20.6 2.27,-19.1 v 61.7 c 0,1.82 -0.378,2.87 -1.13,3.18 -0.605,0.151 -3.56,0.227 -8.85,0.227 z"
+       id="path3"
+       style="display:inline" />
+    <use
+       xlink:href="#C"
+       id="use4" />
+    <use
+       xlink:href="#C"
+       x="-114"
+       y="-42"
+       id="use5" />
+    <use
+       xlink:href="#C"
+       x="-177"
+       y="-63"
+       id="use6" />
+    <use
+       xlink:href="#C"
+       x="-313"
+       y="-22"
+       id="use7" />
+    <use
+       xlink:href="#C"
+       x="-421"
+       y="-63"
+       id="use8" />
+    <use
+       xlink:href="#C"
+       x="-532"
+       y="-42"
+       id="use9" />
+    <use
+       xlink:href="#C"
+       x="-625"
+       y="-63"
+       id="use10" />
+    <path
+       d="m 540.22,518 c -5.14,0 -8.02,-0.151 -8.63,-0.454 -1.06,-0.151 -1.59,-1.13 -1.59,-2.95 v -14.1 c 0,-1.51 0.53,-2.35 1.59,-2.5 h 12.7 c 1.66,0 2.88,-0.832 3.63,-2.5 v -23.6 c 1.21,1.06 1.97,2.42 2.27,4.09 v 38.6 c 0,1.82 -0.378,2.88 -1.14,3.18 -0.605,0.151 -3.56,0.227 -8.85,0.227 z"
+       id="path28"
+       style="display:inline"
+       sodipodi:nodetypes="ccsscscccsccc" />
+    <use
+       xlink:href="#C"
+       x="-697"
+       y="-63"
+       id="use11" />
+    <use
+       xlink:href="#C"
+       x="-760"
+       y="-84"
+       id="use12" />
+    <use
+       xlink:href="#C"
+       x="-906"
+       y="-63"
+       id="use13" />
+    <use
+       xlink:href="#C"
+       x="-992"
+       y="-84"
+       id="use14" />
+    <use
+       xlink:href="#C"
+       x="-1013"
+       y="-105"
+       id="use15" />
+    <use
+       xlink:href="#C"
+       x="-92"
+       y="-370"
+       id="use16" />
+    <use
+       xlink:href="#C"
+       x="-169"
+       y="-349"
+       id="use17" />
+    <use
+       xlink:href="#C"
+       x="-267"
+       y="-370"
+       id="use18" />
+    <use
+       xlink:href="#C"
+       x="-416"
+       y="-370"
+       id="use19" />
+    <use
+       xlink:href="#C"
+       x="-505"
+       y="-370"
+       id="use20" />
+    <use
+       xlink:href="#C"
+       x="-615"
+       y="-349"
+       id="use21" />
+    <use
+       xlink:href="#C"
+       x="-717"
+       y="-307"
+       id="use22" />
+    <use
+       xlink:href="#C"
+       x="-796"
+       y="-349"
+       id="use23" />
+    <use
+       xlink:href="#C"
+       x="-914"
+       y="-370"
+       id="use24" />
+    <use
+       xlink:href="#C"
+       x="-1021"
+       y="-412"
+       id="use25" />
+    <use
+       xlink:href="#D"
+       id="use26" />
+    <use
+       xlink:href="#D"
+       y="-307"
+       id="use27" />
+    <path
+       d="M42.7 523h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-181h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7zm0-42h1195v2.27H42.7z"
+       id="path27" />
+    <text
+       x="77.137794"
+       y="618.90167"
+       id="text27">Cross and Resurrection you have set us free.</text>
+    <text
+       x="97.137764"
+       y="312.90216"
+       id="text28">Save us, saviour of the world, for by your</text>
+  </g>
+  <defs
+     id="defs28">
+    <path
+       id="B"
+       d="M1186 548c-1.21 0-2.12-.303-2.72-.908-.303-.454-.53-1.21-.681-2.27 0-.908.227-1.59.681-2.04.908-.908 1.82-1.36 2.72-1.36 1.36 0 2.27.454 2.72 1.36.454.454.681 1.14.681 2.04 0 .605-.227 1.36-.681 2.27-.605.605-1.44.908-2.5.908z" />
+    <path
+       id="C"
+       d="M1155 537c1.21-2.72 4.62-4.09 10.2-4.09 5.45 0 8.78 1.36 9.99 4.09v20.2c-.454 0-1.59-.454-3.4-1.36-1.82-.757-4.01-1.14-6.58-1.14-2.72 0-4.99.378-6.81 1.14-1.82.908-2.95 1.36-3.4 1.36z" />
+    <path
+       id="D"
+       d="M54.7 441c.454 1.82 1.51 3.56 3.18 5.22 1.66 1.51 3.4 2.27 5.22 2.27 2.87 0 5.9-1.21 9.08-3.63v20.4c-2.12 1.82-4.46 2.72-7.04 2.72a8.57 8.57 0 0 1-2.72-.454c-6.2-2.12-9.31-5.52-9.31-10.2v-35.2c.151-1.66.53-3.1 1.13-4.31 1.36-3.18 4.09-5.22 8.17-6.13a8.57 8.57 0 0 1 2.72-.454c2.72 0 4.84.908 6.36 2.72v19.7c-2.72-1.97-5.52-2.95-8.4-2.95-1.97 0-3.93.832-5.9 2.5-1.82 1.66-2.65 3.48-2.5 5.45z" />
+  </defs>
 </svg>

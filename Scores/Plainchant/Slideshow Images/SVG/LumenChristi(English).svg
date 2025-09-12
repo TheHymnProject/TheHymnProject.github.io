@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" fill="white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <path id="s" d="m0-1.5h1760v3h-1760zm0 40h1760v3h-1760zm0 40h1760v3h-1760zm0 40h1760v3h-1760z"/>
+  <path id="c" d="m13.28 73.86q-5.92 0-9.6-3.84t-3.68-10.08v-40.16q0-6.24 3.52-9.92 3.68-3.84 9.76-3.84 3.84 0 5.44 2.24 1.76 2.08 1.76 4.8v22.08l-1.28-1.12q-4-3.52-9.12-3.52-3.68 0-6.24 2.72t-2.56 6.56q0 4 2.56 6.72t6.24 2.72q5.28 0 9.12-3.36l1.28-1.28v22.24q0 3.2-2.08 5.12-1.92 1.92-5.12 1.92z"/>
+  <path id="p" d="m10.24 47.14q10.24 0 10.24 5.92v19.36q-3.36-3.36-10.24-3.36t-10.24 3.36v-19.36q0-5.92 10.24-5.92z"/>
+  <circle id="d" cx="30.32" cy="60" r="4.4"/>
+  <path id="b" d="m0 0h3v120h-3z"/>
+ </defs>
+ <g id="LabelGroup" transform="translate(40,-100)" font-family="Arial" font-size="98px" font-style="italic">
+  <text x="78.172852" y="740">All:</text>
+  <text x="72" y="320">Priest:</text>
+ </g>
+ <g id="TextGroup" transform="translate(40,160)" font-family="Arial" font-size="98px" font-weight="bold">
+  <text x="72" y="740">Thanks be to God</text>
+  <text x="72" y="320">The light of Christ</text>
+ </g>
+ <g transform="translate(80,660)">
+  <use xlink:href="#s"/>
+  <use xlink:href="#c"/>
+  <use transform="translate(171,-20)" xlink:href="#p"/>
+  <use transform="translate(479,-20)" xlink:href="#p"/>
+  <use transform="translate(595,20)" xlink:href="#p"/>
+  <use transform="translate(759,-20)" xlink:href="#p"/>
+  <use transform="translate(759,-40)" xlink:href="#d"/>
+  <use transform="translate(920)" xlink:href="#b"/>
+  <use transform="translate(937)" xlink:href="#b"/>
+ </g>
+ <g transform="translate(80,240)">
+  <use xlink:href="#s"/>
+  <use xlink:href="#c"/>
+  <use transform="translate(170,-20)" xlink:href="#p"/>
+  <use transform="translate(264,-20)" xlink:href="#p"/>
+  <use transform="translate(488,20)" xlink:href="#p"/>
+  <use transform="translate(758,-20)" xlink:href="#p"/>
+  <use transform="translate(758,-40)" xlink:href="#d"/>
+ </g>
+</svg>

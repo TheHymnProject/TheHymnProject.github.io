@@ -1,0 +1,58 @@
+<svg width="1920" height="1080" style="fill:white" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+	<defs id="defs1">
+		<path id="s" d="M 0,-1.5 h 1760 v 3 h -1760 z M 0,38.5 h 1760 v 3 h -1760 z M 0,78.5 h 1760 v 3 h -1760 z M 0,118.5 h 1760 v 3 h -1760 z"/>
+		<path id="c" d="m 13.28,73.86 q -5.92,0 -9.6,-3.84 Q 0,66.18 0,59.94 V 19.78 Q 0,13.54 3.52,9.86 7.2,6.02 13.28,6.02 q 3.84,0 5.44,2.24 1.76,2.08 1.76,4.8 V 35.14 L 19.2,34.02 q -4,-3.52 -9.12,-3.52 -3.68,0 -6.24,2.72 -2.56,2.72 -2.56,6.56 0,4 2.56,6.72 2.56,2.72 6.24,2.72 5.28,0 9.12,-3.36 l 1.28,-1.28 v 22.24 q 0,3.2 -2.08,5.12 -1.92,1.92 -5.12,1.92 z"/>
+		<path id="p" d="m 10.24,47.14 q 10.24,0 10.24,5.92 V 72.42 Q 17.12,69.06 10.24,69.06 3.36,69.06 0,72.42 V 53.06 q 0,-5.92 10.24,-5.92 z"/>
+		<circle id="d" cx="30.32" cy="60" r="4.4"/>
+		<path id="t" d="m 0,20 h 3 v -40 h -3 z"/>
+		<path id="b" d="m 0,0 h 3 v 120 h -3 z"/>
+		<path id="u" d="m 1760,73.279742 q -8.96,-1.44 -8.96,-6.08 v -22.08 q 2.88,2.56 7.04,2.56 v -27.2 q 0,-2.4 0.8,-2.4 0.16,0 0.16,0 0.96,0.16 0.96,4 z"/>
+		<path id="x" d="m 0,70 h 2 v 25 h -2 z"/>
+		<path id="P2" d="m 18.4,131.01144 q -0.96,-4.64 -7.36,-4.64 -5.6,0 -9.28,2.56 v -15.52 q 0,-6.08 9.28,-6.08 9.44,0 9.44,6.08 v 36.64 q 0,0.8 -0.96,0.96 -0.96,0.16 -3.68,0.16 -0.64,0 -2.72,0 -1.92,0 -3.36,0 -1.6,0 -3.68,0 -2.08,0 -2.56,0 -2.24,0 -2.88,-0.16 -0.64,-0.16 -0.64,-0.8 v -16.8 q 0,-1.12 0.8,-1.12 h 0.48 q 0.8,0.16 8,0.16 0.96,0 2.24,0 1.28,0 1.76,0 2.72,0 3.68,-0.32 1.12,-0.16 1.44,-1.12 z"/>
+		<path id="L" d="m 20.48,76.771437 q -1.12,-4.32 -6.08,-6.08 -4.96,-1.76 -9.12,-1.76 -4,0 -5.28,2.4 v -21.6 q 0,-4 4.32,-4 h 0.16 q 1.92,0 4.16,0.32 2.4,0.16 6.4,1.92 4,1.76 5.44,4.8 z"/>
+		<path id="l" d="m 16.640181,68.931437 q -2.72,0 -4.64,-1.76 -1.92,-1.92 -1.92,-4.32 v -10.72 q 1.92,2.24 5.28,2.24 3.04,0 3.04,-3.84 v -6.72 h 1.92 v 22.08 q 0,3.04 -3.68,3.04 z"/>
+		<path id="k" d="m 20.48,66.851437 c -0.96,2.026667 -2.826667,3.626667 -5.6,4.8 -2.666667,1.173333 -4.746667,1.866667 -6.24,2.08 -1.4933333,0.106667 -2.88,0.16 -4.16,0.16 H 4.32 c -2.88,0 -4.32,-1.386667 -4.32,-4.16 v -21.44 c 0.85333333,1.493333 2.6133333,2.24 5.28,2.24 2.7733333,0 5.813333,-0.586667 9.12,-1.76 3.306667,-1.173333 5.333333,-3.2 6.08,-6.08 z"/>
+		<path id="K" d="m 16.640181,50.691437 q 3.68,0 3.68,3.04 v 21.92 h -1.92 v -6.72 q 0,-3.68 -3.04,-3.68 -3.36,0 -5.28,2.24 v -10.88 q 0,-2.24 1.92,-4 1.92,-1.92 4.64,-1.92 z"/>
+	</defs>
+	<g id="TextGroup" style="font-weight:bold;font-size:98px;font-family:Arial" transform="translate(0,160)">
+		<text id="text2" y="640" x="120">of the Lord. Hosanna in the highest.</text>
+		<text id="text1" x="72" y="320">Blessed is he who comes in the name</text>
+	</g>
+	<g id="ChantLine2" transform="translate(80,560)">
+		<use xlink:href="#s" id="s2"/>
+		<use xlink:href="#c" id="c2"/>
+		<use xlink:href="#p" id="p10" transform="translate(61,20)"/>
+		<use xlink:href="#p" id="p11" transform="translate(269,40)"/>
+		<use xlink:href="#p" id="p12" transform="translate(415,40)"/>
+		<use xlink:href="#d" id="d2" transform="translate(415,40)"/>
+		<use xlink:href="#b" id="b1" transform="translate(590)"/>
+		<use xlink:href="#p" id="p13" transform="translate(697,80)"/>
+		<use xlink:href="#k" id="k1" transform="translate(805,40)"/>
+		<use xlink:href="#K" id="K1" transform="translate(805,20)"/>
+		<use xlink:href="#p" id="p14" transform="translate(983,20)"/>
+		<use xlink:href="#p" id="p15" transform="translate(1051,20)"/>
+		<use xlink:href="#p" id="p16" transform="translate(1273)"/>
+		<use xlink:href="#L" id="L1" transform="translate(1401,20)"/>
+		<use xlink:href="#l" id="l1" transform="translate(1401,40)"/>
+		<use xlink:href="#P2" id="P21" transform="translate(1561,-40)"/>
+		<use xlink:href="#d" id="d3" transform="translate(1561,40)"/>
+		<use xlink:href="#d" id="d4" transform="translate(1561)"/>
+		<use xlink:href="#b" id="b2" transform="translate(1740)"/>
+		<use xlink:href="#b" id="b3" transform="translate(1757)"/>
+	</g>
+	<g id="ChantLine1" transform="translate(80,240)">
+		<use xlink:href="#s" id="s1"/>
+		<use xlink:href="#c" id="c1"/>
+		<use xlink:href="#p" id="p1" transform="translate(108,40)"/>
+		<use xlink:href="#p" id="p2" transform="translate(270,20)"/>
+		<use xlink:href="#p" id="p3" transform="translate(398)"/>
+		<use xlink:href="#p" id="p4" transform="translate(582)"/>
+		<use xlink:href="#d" id="d1" transform="translate(582)"/>
+		<use xlink:href="#p" id="p5" transform="translate(800,20)"/>
+		<use xlink:href="#p" id="p6" transform="translate(944,-20)"/>
+		<use xlink:href="#p" id="p7" transform="translate(1210)"/>
+		<use xlink:href="#p" id="p8" transform="translate(1428,20)"/>
+		<use xlink:href="#p" id="p9" transform="translate(1570)"/>
+		<use xlink:href="#u" id="e1" transform="translate(0,20)"/>
+	</g>
+</svg>

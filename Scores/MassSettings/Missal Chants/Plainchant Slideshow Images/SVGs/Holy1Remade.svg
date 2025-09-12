@@ -1,0 +1,77 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill:white">
+	<defs id="defs1">
+		<path id="s" d="M 0,-1.5 h 1760 v 3 h -1760 z M 0,38.5 h 1760 v 3 h -1760 z M 0,78.5 h 1760 v 3 h -1760 z M 0,118.5 h 1760 v 3 h -1760 z"/>
+		<path id="c" d="m 13.28,73.86 q -5.92,0 -9.6,-3.84 Q 0,66.18 0,59.94 V 19.78 Q 0,13.54 3.52,9.86 7.2,6.02 13.28,6.02 q 3.84,0 5.44,2.24 1.76,2.08 1.76,4.8 V 35.14 L 19.2,34.02 q -4,-3.52 -9.12,-3.52 -3.68,0 -6.24,2.72 -2.56,2.72 -2.56,6.56 0,4 2.56,6.72 2.56,2.72 6.24,2.72 5.28,0 9.12,-3.36 l 1.28,-1.28 v 22.24 q 0,3.2 -2.08,5.12 -1.92,1.92 -5.12,1.92 z"/>
+		<path id="p" d="m 10.24,47.14 q 10.24,0 10.24,5.92 V 72.42 Q 17.12,69.06 10.24,69.06 3.36,69.06 0,72.42 V 53.06 q 0,-5.92 10.24,-5.92 z"/>
+		<circle id="d" cx="30.32" cy="60" r="4.4"/>
+		<path id="t" d="m 0,20 h 3 v -40 h -3 z"/>
+		<path id="b" d="m 0,0 h 3 v 120 h -3 z"/>
+		<path id="u" d="m 1760,73.279742 q -8.96,-1.44 -8.96,-6.08 v -22.08 q 2.88,2.56 7.04,2.56 v -27.2 q 0,-2.4 0.8,-2.4 0.16,0 0.16,0 0.96,0.16 0.96,4 z"/>
+		<path d="m 0,70 h 2 v 25 h -2 z" id="l"/>
+	</defs>
+	<g id="TextGroup" style="font-weight:bold;font-size:106.667px;font-family:Arial">
+		<text x="76" y="960" id="text3">glory. Hosanna in the highest.</text>
+		<text x="72" y="640" id="text2">Heaven and earth are full of your</text>
+		<text x="72" y="320" id="text1">Holy, Holy, Holy Lord God of Hosts</text>
+	</g>
+	<g id="ChantLine3" transform="translate(80,720)">
+		<use xlink:href="#s" id="s3"/>
+		<use xlink:href="#c" id="c3"/>
+		<use xlink:href="#p" id="p23" transform="translate(112,20)"/>
+		<use xlink:href="#p" id="p24" transform="translate(216,40)"/>
+		<use xlink:href="#d" id="d6" transform="translate(216,40)"/>
+		<use xlink:href="#b" id="b2" transform="translate(315)"/>
+		<use xlink:href="#p" id="p25" transform="translate(408,40)"/>
+		<use xlink:href="#p" id="p26" transform="translate(530,20)"/>
+		<use xlink:href="#p" id="p27" transform="translate(718)"/>
+		<use xlink:href="#p" id="p28" transform="translate(794)"/>
+		<use xlink:href="#p" id="p29" transform="translate(1032)"/>
+		<use xlink:href="#p" id="p30" transform="translate(1174,20)"/>
+		<use xlink:href="#p" id="p31" transform="translate(1346)"/>
+		<use xlink:href="#d" id="d7" transform="translate(1346)"/>
+		<use xlink:href="#b" id="b3" transform="translate(1680)"/>
+		<use xlink:href="#u" id="e3" transform="translate(0,40)"/>
+	</g>
+	<g id="ChantLine2" transform="translate(80,400)">
+		<use xlink:href="#s" id="s2"/>
+		<use xlink:href="#c" id="c2"/>
+		<use xlink:href="#p" id="p14" transform="translate(95,40)"/>
+		<use xlink:href="#p" id="p15" transform="translate(267,20)"/>
+		<use xlink:href="#p" id="p16" transform="translate(419)"/>
+		<use xlink:href="#p" id="p17" transform="translate(637)"/>
+		<use xlink:href="#p" id="p18" transform="translate(679)"/>
+		<use xlink:href="#p" id="p19" transform="translate(931,20)"/>
+		<use xlink:href="#p" id="p20" transform="translate(1159,-20)"/>
+		<use xlink:href="#p" id="p21" transform="translate(1313)"/>
+		<use xlink:href="#p" id="p22" transform="translate(1503)"/>
+		<use xlink:href="#u" id="e2" transform="translate(0,20)"/>
+	</g>
+	<g id="ChantLine1" transform="translate(80,80)">
+		<use xlink:href="#s" id="s1"/>
+		<use xlink:href="#c" id="c1"/>
+		<use xlink:href="#p" id="p1" transform="translate(94)"/>
+		<use xlink:href="#l" id="l1" transform="translate(173,0)"/>
+		<use xlink:href="#p" id="p2" transform="translate(173)"/>
+		<use xlink:href="#p" id="p3" transform="translate(193,20)"/>
+		<use xlink:href="#d" id="d1" transform="translate(193)"/>
+		<use xlink:href="#d" id="d2" transform="translate(193,40)"/>
+		<use xlink:href="#t" id="t1" transform="translate(290)"/>
+		<use xlink:href="#p" id="p4" transform="translate(374)"/>
+		<use xlink:href="#l" id="l2" transform="translate(453,0)"/>
+		<use xlink:href="#p" id="p5" transform="translate(453)"/>
+		<use xlink:href="#p" id="p6" transform="translate(473,20)"/>
+		<use xlink:href="#d" id="d3" transform="translate(473)"/>
+		<use xlink:href="#d" id="d4" transform="translate(473,40)"/>
+		<use xlink:href="#t" id="t2" transform="translate(570)"/>
+		<use xlink:href="#p" id="p7" transform="translate(655,20)"/>
+		<use xlink:href="#p" id="p8" transform="translate(749)"/>
+		<use xlink:href="#p" id="p9" transform="translate(905)"/>
+		<use xlink:href="#p" id="p10" transform="translate(945)"/>
+		<use xlink:href="#p" id="p11" transform="translate(1190)"/>
+		<use xlink:href="#p" id="p12" transform="translate(1349,20)"/>
+		<use xlink:href="#p" id="p13" transform="translate(1557)"/>
+		<use xlink:href="#d" id="d5" transform="translate(1557)"/>
+		<use xlink:href="#b" id="b1" transform="translate(1680)"/>
+		<use xlink:href="#u" id="e1" transform="translate(0,40)"/>
+	</g>
+</svg>

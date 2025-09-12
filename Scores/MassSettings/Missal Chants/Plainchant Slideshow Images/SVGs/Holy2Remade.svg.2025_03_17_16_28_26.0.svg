@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1920"
+   height="1080"
+   style="fill:white"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="Holy2Remade.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.57708334"
+     inkscape:cx="901.08302"
+     inkscape:cy="413.28519"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="ChantLine1" />
+  <defs
+     id="defs1">
+    <path
+       id="s"
+       d="M 0,-1.5 h 1760 v 3 h -1760 z M 0,38.5 h 1760 v 3 h -1760 z M 0,78.5 h 1760 v 3 h -1760 z M 0,118.5 h 1760 v 3 h -1760 z" />
+    <path
+       id="c"
+       d="m 13.28,73.86 q -5.92,0 -9.6,-3.84 Q 0,66.18 0,59.94 V 19.78 Q 0,13.54 3.52,9.86 7.2,6.02 13.28,6.02 q 3.84,0 5.44,2.24 1.76,2.08 1.76,4.8 V 35.14 L 19.2,34.02 q -4,-3.52 -9.12,-3.52 -3.68,0 -6.24,2.72 -2.56,2.72 -2.56,6.56 0,4 2.56,6.72 2.56,2.72 6.24,2.72 5.28,0 9.12,-3.36 l 1.28,-1.28 v 22.24 q 0,3.2 -2.08,5.12 -1.92,1.92 -5.12,1.92 z" />
+    <path
+       id="p"
+       d="m 10.24,47.14 q 10.24,0 10.24,5.92 V 72.42 Q 17.12,69.06 10.24,69.06 3.36,69.06 0,72.42 V 53.06 q 0,-5.92 10.24,-5.92 z" />
+    <circle
+       id="d"
+       cx="30.32"
+       cy="60"
+       r="4.4" />
+    <path
+       id="t"
+       d="m 0,20 h 3 v -40 h -3 z" />
+    <path
+       id="b"
+       d="m 0,0 h 3 v 120 h -3 z" />
+    <path
+       id="u"
+       d="m 1760,73.279742 q -8.96,-1.44 -8.96,-6.08 v -22.08 q 2.88,2.56 7.04,2.56 v -27.2 q 0,-2.4 0.8,-2.4 0.16,0 0.16,0 0.96,0.16 0.96,4 z" />
+    <path
+       d="m 0,70 h 2 v 25 h -2 z"
+       id="l" />
+    <path
+       d="m 16.640181,70.716614 q 3.68,0 3.68,3.04 v 21.92 h -1.92 v -6.72 q 0,-3.68 -3.04,-3.68 -3.36,0 -5.28,2.24 v -10.88 q 0,-2.24 1.92,-4 1.92,-1.92 4.64,-1.92 z"
+       id="K" />
+    <path
+       d="m 20.48,106.87661 q -1.44,3.04 -5.6,4.8 -4,1.76 -6.24,2.08 -2.24,0.16 -4.16,0.16 0,0 -0.16,0 -4.32,0 -4.32,-4.16 V 88.316614 q 1.28,2.24 5.28,2.24 4.16,0 9.12,-1.76 4.96,-1.76 6.08,-6.08 z"
+       id="k" />
+  </defs>
+  <g
+     id="TextGroup"
+     style="font-weight:bold;font-size:98px;font-family:Arial">
+    <text
+       id="text2"
+       y="640"
+       x="120"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="76.076172"
+         y="592.84668">of the Lord. Hosanna in the highest.</tspan></text>
+    <text
+       x="72"
+       y="320"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1">Blessed is he who comes in the name</tspan></text>
+  </g>
+  <g
+     id="ChantLine2"
+     transform="translate(80,400)">
+    <use
+       xlink:href="#s"
+       id="s2" />
+    <use
+       xlink:href="#c"
+       id="c2" />
+    <use
+       xlink:href="#p"
+       id="p14"
+       transform="translate(59,20)" />
+    <use
+       xlink:href="#p"
+       id="p15"
+       transform="translate(269,40)" />
+    <use
+       xlink:href="#p"
+       id="p16"
+       transform="translate(415,40)" />
+    <use
+       xlink:href="#p"
+       id="p17"
+       transform="translate(697,80)" />
+    <use
+       xlink:href="#p"
+       id="p18"
+       transform="translate(807)" />
+    <use
+       xlink:href="#p"
+       id="p19"
+       transform="translate(983,20)" />
+    <use
+       xlink:href="#p"
+       id="p20"
+       transform="translate(1051,20)" />
+    <use
+       xlink:href="#p"
+       id="p21"
+       transform="translate(1273)" />
+    <use
+       xlink:href="#p"
+       id="p22"
+       transform="translate(1559,20)" />
+    <use
+       xlink:href="#b"
+       id="b2"
+       transform="translate(1740)" />
+    <use
+       xlink:href="#b"
+       id="b3"
+       transform="translate(1757)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:160px;font-family:'Caeciliae Staffless';-inkscape-font-specification:'Caeciliae Staffless Medium';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;stroke-width:3"
+       x="0"
+       y="118.71661"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="0"
+         y="118.71661">2k3K</tspan></text>
+    <use
+       xlink:href="#symbol4"
+       id="use4" />
+  </g>
+  <g
+     id="ChantLine1"
+     transform="translate(80,80)">
+    <use
+       xlink:href="#s"
+       id="s1" />
+    <use
+       xlink:href="#c"
+       id="c1" />
+    <use
+       xlink:href="#p"
+       id="p1"
+       transform="translate(108,40)" />
+    <use
+       xlink:href="#p"
+       id="p2"
+       transform="translate(270,20)" />
+    <use
+       xlink:href="#p"
+       id="p3"
+       transform="translate(398)" />
+    <use
+       xlink:href="#p"
+       id="p4"
+       transform="translate(582)" />
+    <use
+       xlink:href="#d"
+       id="d1"
+       transform="translate(582)" />
+    <use
+       xlink:href="#p"
+       id="use2"
+       transform="translate(582)" />
+    <use
+       xlink:href="#p"
+       id="p5"
+       transform="translate(800,20)" />
+    <use
+       xlink:href="#p"
+       id="p6"
+       transform="translate(944,-20)" />
+    <use
+       xlink:href="#p"
+       id="p7"
+       transform="translate(1210)" />
+    <use
+       xlink:href="#p"
+       id="p8"
+       transform="translate(1428,20)" />
+    <use
+       xlink:href="#p"
+       id="p9"
+       transform="translate(1570)" />
+    <use
+       xlink:href="#u"
+       id="e1"
+       transform="translate(0,20)" />
+  </g>
+</svg>
