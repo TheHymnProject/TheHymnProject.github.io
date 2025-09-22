@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Browse GitHub Directory</title>
+<style>
+  body { font-family: sans-serif; padding: 1em; }
+  details { margin-left: 1em; }
+  summary { font-weight: bold; cursor: pointer; }
+  a { display: block; margin-left: 1em; text-decoration: none; color: blue; }
+</style>
+</head>
+<body>
+
+<button id="refreshBtn">Reread directory</button>
+<div id="directory"></div>
+
+<script>
+(async function() {
+  const dbName = 'githubDirectoryDB';
+  const storeName = 'items';
+
+  // --- Infer owner/repo from current URL ---
+  function getRepoInfo() {
+    const hostParts = window.location.hostname.split('.');
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const owner = hostParts[0];
+    const repo = pathParts.length > 0 ? pathParts[0] : owner + '.github.io';
+    return { owner, repo };
+  }
+
+  const { owner, repo } = getRepoInfo();
+  const branch = 'main'; // adjust if needed
+
+  // --- IndexedDB helpers ---
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(dbName, 1);
+      request.onupgradeneeded = e => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains(storeName)) {
+          db.createObjectStore(storeName, { keyPath: 'path' });
+        }
+      };
+      request.onsuccess = e => resolve(e.target.result);
+      request.onerror = e => reject(e.target.error);
+    });
+  }
+
+  async function clearStore(db) {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, 'readwrite');
+      tx.objectStore(storeName).clear();
+      tx.oncomplete = () => resolve();
+      tx.onerror = e => reject(e.target.error);
+    });
+  }
+
+  async function saveItems(db, items) {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, 'readwrite');
+      const store = tx.objectStore(storeName);
+      items.forEach(item => store.put(item));
+      tx.oncomplete = () => resolve();
+      tx.onerror = e => reject(e.target.error);
+    });
+  }
+
+  async function getItemsByParent(db, parent) {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(storeName, 'readonly');
+      const store = tx.objectStore(storeName);
+      const request = store.getAll();
+      request.onsuccess = () => {
+        const all = request.result;
+        const filtered = all
+          .filter(i => i.parent === parent)
+          .sort((a, b) => a.path.localeCompare(b.path));
+        resolve(filtered);
+      };
+      request.onerror = e => reject(e.target.error);
+    });
+  }
+
+  // --- Fetch and store repo tree ---
+  async function fetchAndStore() {
+    const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+    const data = await res.json();
+
+    const items = data.tree
+      .filter(obj => 
+        (obj.type === 'blob' || obj.type === 'tree') &&
+        !obj.path.split('/').some(part => part.startsWith('.'))
+      )
+      .map(obj => {
+        const parts = obj.path.split('/');
+        const name = parts[parts.length - 1];
+        const parent = parts.length > 1 ? parts.slice(0, -1).join('/') : '';
+        return {
+          path: obj.path,
+          type: obj.type === 'blob' ? 'file' : 'folder',
+          parent
+        };
+      });
+
+    const db = await openDB();
+    await clearStore(db);
+    await saveItems(db, items);
+    buildDirectory('');
+  }
+
+  // --- Build nested details ---
+  async function buildDirectory(parent) {
+    const db = await openDB();
+    const container = parent === '' ? document.getElementById('directory') : document.createElement('div');
+    container.innerHTML = '';
+
+    const items = await getItemsByParent(db, parent);
+    const folders = items.filter(i => i.type === 'folder');
+    const files = items.filter(i => i.type === 'file');
+
+    folders.forEach(folder => {
+      const details = document.createElement('details');
+      const summary = document.createElement('summary');
+      summary.textContent = folder.path.split('/').pop();
+      details.appendChild(summary);
+      buildDirectory(folder.path).then(child => details.appendChild(child));
+      container.appendChild(details);
+    });
+
+    files.forEach(file => {
+      const link = document.createElement('a');
+      link.textContent = file.path.split('/').pop();
+      link.href = `/${repo}/${file.path}`;
+      link.target = '_blank';
+      container.appendChild(link);
+    });
+
+    return container;
+  }
+
+  // --- Event listeners ---
+  document.getElementById('refreshBtn').addEventListener('click', fetchAndStore);
+
+  // --- On load ---
+  const db = await openDB();
+  const existing = await getItemsByParent(db, '');
+  if (existing.length > 0) {
+    buildDirectory('');
+  } else {
+    fetchAndStore();
+  }
+})();
+</script>
+
+</body>
+</html>
