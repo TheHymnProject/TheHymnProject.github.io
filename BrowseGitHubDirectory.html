@@ -142,7 +142,12 @@
     files.forEach(file => {
       const link = document.createElement('a');
       link.textContent = file.path.split('/').pop();
-      link.href = `/${repo}/${file.path}`;
+    
+      // Determine base path depending on site type
+      const isUserSite = repo.toLowerCase() === `${owner.toLowerCase()}.github.io`;
+      const basePath = isUserSite ? '' : `/${repo}`;
+    
+      link.href = `${basePath}/${file.path}`;
       link.target = '_blank';
       container.appendChild(link);
     });
