@@ -23,9 +23,18 @@
   // --- Infer owner/repo from current URL ---
   function getRepoInfo() {
     const hostParts = window.location.hostname.split('.');
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
     const owner = hostParts[0];
-    const repo = pathParts.length > 0 ? pathParts[0] : owner + '.github.io';
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+  
+    let repo;
+    if (pathParts.length === 0) {
+      // User/Org site → repo name is owner.github.io
+      repo = `${owner}.github.io`;
+    } else {
+      // Project site → first path segment is repo name
+      repo = pathParts[0];
+    }
+  
     return { owner, repo };
   }
 
