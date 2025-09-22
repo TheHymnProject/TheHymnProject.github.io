@@ -98,10 +98,14 @@
     if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
     const data = await res.json();
 
+    const thisFile = window.location.pathname.split('/').pop().toLowerCase();
+    
     const items = data.tree
       .filter(obj => 
         (obj.type === 'blob' || obj.type === 'tree') &&
-        !obj.path.split('/').some(part => part.startsWith('.'))
+        !obj.path.split('/').some(part => part.startsWith('.')) &&
+        !obj.path.toLowerCase().endsWith('desktop.ini') &&
+        obj.path.toLowerCase() !== thisFile
       )
       .map(obj => {
         const parts = obj.path.split('/');
