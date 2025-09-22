@@ -27,7 +27,7 @@
     const pathParts = window.location.pathname.split('/').filter(Boolean);
   
     let repo;
-    if (pathParts.length === 0) {
+    if (pathParts.length === 0 || pathParts[0].endsWith('.html')) {
       // User/Org site → repo name is owner.github.io
       repo = `${owner}.github.io`;
     } else {
