@@ -1,6 +1,7 @@
 name: Update PDF Links in Index
 
 on:
+  workflow_dispatch: 
   push:
     paths:
       - "Scores/**/*.pdf"
