@@ -24,16 +24,49 @@ jobs:
         LIST_START="<ul id=\"chartsList\">"
         LIST_END="</ul>"
 
+        addDirContent() {
+            local folder="$1"
+        
+            echo "<li>" >> "$NEW_LIST_FILE"
+            echo "  <details>" >> "$NEW_LIST_FILE"
+            echo "    <summary>$(basename "$folder")</summary>" >> "$NEW_LIST_FILE"
+            echo "    <ul>" >> "$NEW_LIST_FILE"
+        
+            # Process subfolders first
+            find "$folder" -mindepth 1 -maxdepth 1 -type d | sort | while read item; do
+                addDirContent "$item"
+            done
+        
+            # Then process files
+            find "$folder" -mindepth 1 -maxdepth 1 -type f -name "*.pdf" | sort | while read item; do
+                filename=$(basename "$item")
+        
+                echo "      <li>\"$item\"$filename</a></li>" >> "$NEW_LIST_FILE"
+            done
+        
+            echo "    </ul>" >> "$NEW_LIST_FILE"
+            echo "  </details>" >> "$NEW_LIST_FILE"
+            echo "</li>" >> "$NEW_LIST_FILE"
+        }
+
         # Start new list in separate file
         echo "$LIST_START" > "$NEW_LIST_FILE"
 
-        # Process PDFs one by one, avoiding long argument issues
-        find Scores -type f -name "*.pdf" | sort | while read filepath; do
-          filename=$(basename "$filepath")
-          echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$NEW_LIST_FILE"
-        done
+        addDirContent "Scores"
 
-        echo "$LIST_END" >> "$NEW_LIST_FILE"
+        echo "$LIST_END" >> "$NEW_LIST_FILE"        
+
+        ## Process PDFs one by one, avoiding long argument issues
+        #find Scores -name "*.pdf" | sort | while read filepath; do
+        #  if [ -f "$filepath" ]; then
+        #    filename=$(basename "$filepath")
+        #    echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$NEW_LIST_FILE"
+        #  fi
+        #  if [ -d "$filepath" ]; then
+        #    foldername=$(basename "$(dirname "$filepath")")
+        #    echo "  <li><em>$foldername</em></li>" >> "$NEW_LIST_FILE"
+        #  fi
+        #done
 
         # Stream the index.html file safely while replacing the list
         awk '
