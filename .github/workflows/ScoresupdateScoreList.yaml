@@ -40,9 +40,9 @@ jobs:
         
             # Then process files
             find "$folder" -mindepth 1 -maxdepth 1 -type f -name "*.pdf" | sort | while read item; do
-                filename=$(basename "$item")
+                filename=$(basename "$item" .pdf)
         
-                echo "      <li>\"$item\"$filename</a></li>" >> "$NEW_LIST_FILE"
+                echo "      <li><a href=\"$item\">$filename</a></li>" >> "$NEW_LIST_FILE"
             done
         
             echo "    </ul>" >> "$NEW_LIST_FILE"
