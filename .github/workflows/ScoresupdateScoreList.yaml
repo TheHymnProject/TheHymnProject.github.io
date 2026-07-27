@@ -22,7 +22,7 @@ jobs:
         FILE="index.html"
         TMP_FILE="index.tmp.html"
         NEW_LIST_FILE="new_list.html"
-        LIST_START="<ul id=\"chartsList\">"
+        LIST_START="<ul id=\"chartsList\" class=\"w3-ul\">"
         LIST_END="</ul>"
 
         addDirContent() {
@@ -42,7 +42,7 @@ jobs:
             find "$folder" -mindepth 1 -maxdepth 1 -type f -name "*.pdf" | sort | while read item; do
                 filename=$(basename "$item" .pdf)
         
-                echo "      <li><a href=\"$item\">$filename</a></li>" >> "$NEW_LIST_FILE"
+                echo "      <li class="res-chart"><a href=\"$item\">$filename</a></li>" >> "$NEW_LIST_FILE"
             done
         
             echo "    </ul>" >> "$NEW_LIST_FILE"
@@ -55,41 +55,32 @@ jobs:
 
         addDirContent "Scores"
 
-        echo "$LIST_END" >> "$NEW_LIST_FILE"        
+        echo "$LIST_END" >> "$NEW_LIST_FILE"
 
-        ## Process PDFs one by one, avoiding long argument issues
-        #find Scores -name "*.pdf" | sort | while read filepath; do
-        #  if [ -f "$filepath" ]; then
-        #    filename=$(basename "$filepath")
-        #    echo "  <li><a href=\"$filepath\">$filename</a></li>" >> "$NEW_LIST_FILE"
-        #  fi
-        #  if [ -d "$filepath" ]; then
-        #    foldername=$(basename "$(dirname "$filepath")")
-        #    echo "  <li><em>$foldername</em></li>" >> "$NEW_LIST_FILE"
-        #  fi
-        #done
-
-        # Stream the index.html file safely while replacing the list
+        # Replace everything between the markers
         awk '
-          BEGIN { inside_list = 0 }
-          {
-            if ($0 ~ /<ul id="chartsList">/) { 
-              inside_list = 1
-              while (getline line < "'"$NEW_LIST_FILE"'") print line 
-            }
-            if (inside_list && $0 ~ /<\/ul>/) { 
-              inside_list = 0
-              next
-            }
-            if (!inside_list) print
+        BEGIN {inside_block = 0}
+        {
+          if ($0 ~ /<!-- BEGIN_CHARTS_LIST -->/) {
+            print
+            inside_block = 1
+        
+            while ((getline line < "'"$NEW_LIST_FILE"'") > 0)
+              print line
+        
+            next
           }
+        
+          if ($0 ~ /<!-- END_CHARTS_LIST -->/) {
+            inside_block = 0
+            print
+            next
+          }
+        
+          if (!inside_block)
+            print
+        }
         ' "$FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$FILE"
-
-        # If no chartsList found, append before </body>
-        if ! grep -q '<ul id="chartsList">' "$FILE"; then
-          echo "" >> "$FILE"
-          cat "$NEW_LIST_FILE" >> "$FILE"
-        fi
 
         # Clean up temporary file
         rm "$NEW_LIST_FILE"
