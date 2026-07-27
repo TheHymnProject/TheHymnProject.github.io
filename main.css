@@ -423,7 +423,7 @@ a {
     border-radius: 50%
 }
 
-.w3-ul {
+.w3-ul, #chartslist {
     list-style-type: none;
     padding: 0;
     margin: 0
