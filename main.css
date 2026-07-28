@@ -7,6 +7,14 @@
     text-decoration: underline;
 }
 
+#chartList details > summary::before {
+    content: "📁 ";
+}
+
+#chartList details[open] > summary::before {
+    content: "📂 ";
+}
+
  /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
  html {
     box-sizing: border-box
