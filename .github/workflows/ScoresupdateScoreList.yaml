@@ -22,8 +22,8 @@ jobs:
         FILE="index.html"
         TMP_FILE="index.tmp.html"
         NEW_LIST_FILE="new_list.html"
-        LIST_START="<ul id=\"chartsList\" class=\"w3-ul\">"
-        LIST_END="</ul>"
+        LIST_START="        <ul id=\"chartList\" class=\"w3-ul\">"
+        LIST_END="        </ul>"
         
         addDirContent() {
             local folder="$1"
