@@ -32,7 +32,7 @@ jobs:
             echo "${indent}<li>" >> "$NEW_LIST_FILE"
             echo "${indent}  <details>" >> "$NEW_LIST_FILE"
             echo "${indent}    <summary>$(basename "$folder")</summary>" >> "$NEW_LIST_FILE"
-            echo "${indent}    <ul>" >> "$NEW_LIST_FILE"
+            echo "${indent}    <ul class=\"w3-ul\">" >> "$NEW_LIST_FILE"
         
             # Process subfolders first
             find "$folder" -mindepth 1 -maxdepth 1 -type d | sort -f | while read subfolder; do
