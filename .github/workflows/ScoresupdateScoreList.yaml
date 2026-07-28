@@ -28,7 +28,7 @@ jobs:
         addDirContent() {
             local folder="$1"
             local level="$2"
-            local indent=$(printf '%*s' "$(((level * 6) + 4))" '')
+            local indent=$(printf '%*s' "$(((level * 6) + 10))" '')
             echo "${indent}<li>" >> "$NEW_LIST_FILE"
             echo "${indent}  <details>" >> "$NEW_LIST_FILE"
             echo "${indent}    <summary>$(basename "$folder")</summary>" >> "$NEW_LIST_FILE"
