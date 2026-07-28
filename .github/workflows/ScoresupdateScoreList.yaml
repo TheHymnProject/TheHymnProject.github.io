@@ -24,36 +24,39 @@ jobs:
         NEW_LIST_FILE="new_list.html"
         LIST_START="<ul id=\"chartsList\" class=\"w3-ul\">"
         LIST_END="</ul>"
-
+        
         addDirContent() {
             local folder="$1"
-        
-            echo "<li>" >> "$NEW_LIST_FILE"
-            echo "  <details>" >> "$NEW_LIST_FILE"
-            echo "    <summary>$(basename "$folder")</summary>" >> "$NEW_LIST_FILE"
-            echo "    <ul>" >> "$NEW_LIST_FILE"
+            local level="$2"
+            local indent=$(printf '%*s' "$(((level * 6) + 4))" '')
+            echo "${indent}<li>" >> "$NEW_LIST_FILE"
+            echo "${indent}  <details>" >> "$NEW_LIST_FILE"
+            echo "${indent}    <summary>$(basename "$folder")</summary>" >> "$NEW_LIST_FILE"
+            echo "${indent}    <ul>" >> "$NEW_LIST_FILE"
         
             # Process subfolders first
-            find "$folder" -mindepth 1 -maxdepth 1 -type d | sort | while read item; do
-                addDirContent "$item"
+            find "$folder" -mindepth 1 -maxdepth 1 -type d | sort -f | while read subfolder; do
+                addDirContent "$subfolder" $((level + 1))
             done
         
             # Then process files
-            find "$folder" -mindepth 1 -maxdepth 1 -type f -name "*.pdf" | sort | while read item; do
-                filename=$(basename "$item" .pdf)
+            find "$folder" -mindepth 1 -maxdepth 1 -type f -name "*.pdf" | sort -f | while read pdf; do
+                local filename=$(basename "$pdf" .pdf)
         
-                echo "      <li class="res-chart"><a href=\"$item\">$filename</a></li>" >> "$NEW_LIST_FILE"
+                echo "${indent}      <li class=\"res-chart\">" >> "$NEW_LIST_FILE"
+                echo "${indent}        <a href=\"$pdf\">$filename</a>" >> "$NEW_LIST_FILE"
+                echo "${indent}      </li>" >> "$NEW_LIST_FILE"
             done
         
-            echo "    </ul>" >> "$NEW_LIST_FILE"
-            echo "  </details>" >> "$NEW_LIST_FILE"
-            echo "</li>" >> "$NEW_LIST_FILE"
+            echo "${indent}    </ul>" >> "$NEW_LIST_FILE"
+            echo "${indent}  </details>" >> "$NEW_LIST_FILE"
+            echo "${indent}</li>" >> "$NEW_LIST_FILE"
         }
 
         # Start new list in separate file
         echo "$LIST_START" > "$NEW_LIST_FILE"
 
-        addDirContent "Scores"
+        addDirContent "Scores" 0
 
         echo "$LIST_END" >> "$NEW_LIST_FILE"
 
